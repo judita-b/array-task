@@ -31,6 +31,10 @@ public final class Array {
     }
   }
 
+  public int[] getItems() {
+    return items;
+  }
+
   public Integer[] getWrapedArray() {
     return wrapedArray;
   }
