@@ -26,8 +26,28 @@ public class ArrayLogic {
         }
     }
 
-    public Array findPrimeNumbers(Array array) {
-        throw new UnsupportedOperationException();
+    public int[] findPrimeNumbers(int[] array) {
+        int j = 0;
+        int k = 0;
+        int l = 0;
+        int[] primeNumbers = new int[array.length];
+
+        for (int i = 0; i < array.length; i++) {
+            j = 2;
+            k = 1;
+            while (j < array[i]) {
+                if (array[i] % j == 0) {
+                    k = 0;
+                    break;
+                }
+                j++;
+            }
+            if (k == 1) {
+                primeNumbers[l] = array[i];
+                l++;
+            }
+        }
+        return primeNumbers;
     }
 
     //TODO: add other methods here

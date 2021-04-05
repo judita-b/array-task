@@ -84,4 +84,14 @@ public class ArrayLogicTest {
         //then
         assertEquals(-9, result);
     }
+
+    @Test
+    public void testFindPrimeNumbers(){
+        //given
+        int[] array = new Array().getItems();
+        //when
+        int[] result = arrayLogic.findPrimeNumbers(array);
+        //then
+        assertArrayEquals(new int[]{0, 1, 2, 3, 0}, result);
+    }
 }
