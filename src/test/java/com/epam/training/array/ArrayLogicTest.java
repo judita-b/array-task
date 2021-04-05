@@ -1,5 +1,6 @@
 package com.epam.training.array;
 
+import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -42,5 +43,25 @@ public class ArrayLogicTest {
         boolean result = arrayLogic.search(array, 4);
         //then
         assertTrue(result);
+    }
+
+    @Test
+    public void testFindMaxWhenNumberPositive(){
+        //given
+        Integer[] array = new Array().getWrapedArray();
+        //when
+        int result = arrayLogic.findMax(array);
+        //then
+        assertEquals(4, result);
+    }
+
+    @Test
+    public void testFindMimWhenNumberPositive(){
+        //given
+        Integer[] array = new Array().getWrapedArray();
+        //when
+        int result = arrayLogic.findMin(array);
+        //then
+        assertEquals(0, result);
     }
 }
