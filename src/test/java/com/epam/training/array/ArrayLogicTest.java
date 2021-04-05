@@ -56,6 +56,16 @@ public class ArrayLogicTest {
     }
 
     @Test
+    public void testFindMaxWhenNumberNegative(){
+        //given
+        Integer[] array = new Array(-1, -5, -8, -9, 0).getWrapedArray();
+        //when
+        int result = arrayLogic.findMax(array);
+        //then
+        assertEquals(0, result);
+    }
+
+    @Test
     public void testFindMimWhenNumberPositive(){
         //given
         Integer[] array = new Array().getWrapedArray();
@@ -63,5 +73,15 @@ public class ArrayLogicTest {
         int result = arrayLogic.findMin(array);
         //then
         assertEquals(0, result);
+    }
+
+    @Test
+    public void testFindMinWhenNumberNegative(){
+        //given
+        Integer[] array = new Array(-1, -5, -8, -9, 0).getWrapedArray();
+        //when
+        int result = arrayLogic.findMin(array);
+        //then
+        assertEquals(-9, result);
     }
 }
