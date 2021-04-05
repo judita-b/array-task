@@ -5,13 +5,15 @@ import static org.junit.Assert.*;
 
 public class ArrayLogicTest {
 
+    private ArrayLogic arrayLogic = new ArrayLogic();
+
     //TODO: add tests for various scenarios
     @Test
     public void testSortWhenNumbersPositive(){
         //given
         int[] array = new Array().getItems();
         //when
-        int[] result = ArrayLogic.sort(array);
+        int[] result = arrayLogic.sort(array);
         //then
         int j = 0;
         for(int i = 0; i < array.length; i++){
@@ -25,11 +27,20 @@ public class ArrayLogicTest {
         //given
         int[] array = new Array(-1, -5, -8, -9, 0).getItems();
         //when
-        int[] result = ArrayLogic.sort(array);
+        int[] result = arrayLogic.sort(array);
         //then
         for(int i = 0; i < array.length; i++){
             assertTrue(array[i] >= array[i++]);
         }
     }
 
+    @Test
+    public void testSearch(){
+        //given
+        int[] array = new Array().getItems();
+        //when
+        boolean result = arrayLogic.search(array, 4);
+        //then
+        assertTrue(result);
+    }
 }
