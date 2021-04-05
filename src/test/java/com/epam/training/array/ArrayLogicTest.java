@@ -20,4 +20,16 @@ public class ArrayLogicTest {
         }
     }
 
+    @Test
+    public void testSortWhenNumbersNegative(){
+        //given
+        int[] array = new Array(-1, -5, -8, -9, 0).getItems();
+        //when
+        int[] result = ArrayLogic.sort(array);
+        //then
+        for(int i = 0; i < array.length; i++){
+            assertTrue(array[i] >= array[i++]);
+        }
+    }
+
 }
