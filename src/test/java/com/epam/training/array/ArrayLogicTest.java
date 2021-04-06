@@ -10,88 +10,95 @@ public class ArrayLogicTest {
 
     //TODO: add tests for various scenarios
     @Test
-    public void testSortWhenNumbersPositive(){
+    public void testSortArrayShouldSortWhenNumbersPositive(){
         //given
-        Array array = new Array();
+        Array array = new Array(new int[]{1, 5, 6, 8, 2});
         //when
-        int[] result = arrayLogic.sort(array);
+        Array result = arrayLogic.sortArray(array);
         //then
-        int j = 0;
-        for(int i = 0; i < result.length; i++){
-            assertTrue(result[i] >= j);
-            j = result[i];
-        }
+        Array expected = new Array(new int[]{1, 2, 5, 6, 8});
+        assertEquals(expected, result);
     }
 
     @Test
-    public void testSortWhenNumbersNegative(){
+    public void testSortShouldSortWhenNumbersNegative(){
         //given
-        Array array = new Array(-1, -5, -8, -9, 0);
+        Array array = new Array(new int[]{-1, -5, -8, -9, 0});
         //when
-        int[] result = arrayLogic.sort(array);
+        Array result = arrayLogic.sortArray(array);
         //then
-        for(int i = 0; i < result.length; i++){
-            assertTrue(result[i] >= result[i++]);
-        }
+        Array expected = new Array(new int[]{-9, -8, -5, -1, 0});
+        assertEquals(expected, result);
     }
 
     @Test
-    public void testSearch(){
+    public void testSearchInArrayShouldSearchWhenNumbersPositive(){
         //given
-        Array array = new Array();
+        Array array = new Array(new int[]{1, 5, 6, 8, 2});
         //when
-        boolean result = arrayLogic.search(array, 4);
+        boolean result = arrayLogic.searchInArray(array, 5);
         //then
         assertTrue(result);
     }
 
     @Test
-    public void testFindMaxWhenNumberPositive(){
+    public void testSearchInArrayShouldSearchWhenNumbersNegative(){
         //given
-        Array array = new Array();
+        Array array = new Array(new int[]{-1, -5, -8, -9, 0});
         //when
-        int result = arrayLogic.findMax(array);
+        boolean result = arrayLogic.searchInArray(array, -5);
         //then
-        assertEquals(4, result);
+        assertTrue(result);
+    }
+
+
+    @Test
+    public void testFindMaxNumberShouldFindMaxWhenNumberPositive(){
+        //given
+        Array array = new Array(new int[]{1, 5, 6, 8, 2});
+        //when
+        int result = arrayLogic.findMaxNumber(array);
+        //then
+        assertEquals(8, result);
     }
 
     @Test
-    public void testFindMaxWhenNumberNegative(){
+    public void testFindMaxNumberShouldFindMaxWhenNumberNegative(){
         //given
-        Array array = new Array(-1, -5, -8, -9, 0);
+        Array array = new Array(new int[]{-1, -5, -8, -9, 0});
         //when
-        int result = arrayLogic.findMax(array);
+        int result = arrayLogic.findMaxNumber(array);
         //then
         assertEquals(0, result);
     }
 
     @Test
-    public void testFindMimWhenNumberPositive(){
+    public void testFindMinNumberShouldFindMinWhenNumberPositive(){
         //given
-        Array array = new Array();
+        Array array = new Array(new int[]{1, 5, 6, 8, 2});
         //when
-        int result = arrayLogic.findMin(array);
+        int result = arrayLogic.findMinNumber(array);
         //then
-        assertEquals(0, result);
+        assertEquals(1, result);
     }
 
     @Test
-    public void testFindMinWhenNumberNegative(){
+    public void testFindMinNumberShouldFindMinWhenNumberNegative(){
         //given
-        Array array = new Array(-1, -5, -8, -9, 0);
+        Array array = new Array(new int[]{-1, -5, -8, -9, 0});
         //when
-        int result = arrayLogic.findMin(array);
+        int result = arrayLogic.findMinNumber(array);
         //then
         assertEquals(-9, result);
     }
 
     @Test
-    public void testFindPrimeNumbers(){
+    public void testFindPrimeNumbersShouldFindPrimeWhenNumberPositive(){
         //given
-        Array array = new Array();
+        Array array = new Array(new int[]{9, 5, 6, 8, 2});
         //when
         int[] result = arrayLogic.findPrimeNumbers(array);
         //then
-        assertArrayEquals(new int[]{0, 1, 2, 3, 0}, result);
+        assertArrayEquals(new int[]{5, 2, 0, 0, 0}, result);
     }
 }
