@@ -12,33 +12,33 @@ public class ArrayLogicTest {
     @Test
     public void testSortWhenNumbersPositive(){
         //given
-        int[] array = new Array().getItems();
+        Array array = new Array();
         //when
         int[] result = arrayLogic.sort(array);
         //then
         int j = 0;
-        for(int i = 0; i < array.length; i++){
-            assertTrue(array[i] >= j);
-            j = array[i];
+        for(int i = 0; i < result.length; i++){
+            assertTrue(result[i] >= j);
+            j = result[i];
         }
     }
 
     @Test
     public void testSortWhenNumbersNegative(){
         //given
-        int[] array = new Array(-1, -5, -8, -9, 0).getItems();
+        Array array = new Array(-1, -5, -8, -9, 0);
         //when
         int[] result = arrayLogic.sort(array);
         //then
-        for(int i = 0; i < array.length; i++){
-            assertTrue(array[i] >= array[i++]);
+        for(int i = 0; i < result.length; i++){
+            assertTrue(result[i] >= result[i++]);
         }
     }
 
     @Test
     public void testSearch(){
         //given
-        int[] array = new Array().getItems();
+        Array array = new Array();
         //when
         boolean result = arrayLogic.search(array, 4);
         //then
@@ -48,7 +48,7 @@ public class ArrayLogicTest {
     @Test
     public void testFindMaxWhenNumberPositive(){
         //given
-        Integer[] array = new Array().getWrapedArray();
+        Array array = new Array();
         //when
         int result = arrayLogic.findMax(array);
         //then
@@ -58,7 +58,7 @@ public class ArrayLogicTest {
     @Test
     public void testFindMaxWhenNumberNegative(){
         //given
-        Integer[] array = new Array(-1, -5, -8, -9, 0).getWrapedArray();
+        Array array = new Array(-1, -5, -8, -9, 0);
         //when
         int result = arrayLogic.findMax(array);
         //then
@@ -68,7 +68,7 @@ public class ArrayLogicTest {
     @Test
     public void testFindMimWhenNumberPositive(){
         //given
-        Integer[] array = new Array().getWrapedArray();
+        Array array = new Array();
         //when
         int result = arrayLogic.findMin(array);
         //then
@@ -78,7 +78,7 @@ public class ArrayLogicTest {
     @Test
     public void testFindMinWhenNumberNegative(){
         //given
-        Integer[] array = new Array(-1, -5, -8, -9, 0).getWrapedArray();
+        Array array = new Array(-1, -5, -8, -9, 0);
         //when
         int result = arrayLogic.findMin(array);
         //then
@@ -88,7 +88,7 @@ public class ArrayLogicTest {
     @Test
     public void testFindPrimeNumbers(){
         //given
-        int[] array = new Array().getItems();
+        Array array = new Array();
         //when
         int[] result = arrayLogic.findPrimeNumbers(array);
         //then
