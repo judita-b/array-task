@@ -7,7 +7,6 @@ public final class Array {
   
   private final int[] items;
 
-  //not limit to certain number of items
   public Array(int[] items){
     this.items = items;
   }
@@ -23,7 +22,6 @@ public final class Array {
             '}';
   }
 
-  //format as agreed with {} always
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -41,6 +39,3 @@ public final class Array {
     return Arrays.hashCode(items);
   }
 }
-
-//no logic in test
-//test should be linear

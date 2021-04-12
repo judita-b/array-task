@@ -1,14 +1,10 @@
 package com.epam.training.array;
 
-import java.util.Arrays;
-import java.util.Collections;
-
 public class ArrayLogic {
 
     //TODO: write it using binary search
     public boolean searchInArray(Array array, int searchedNumber) {
         int[] items = array.getItems();
-        //int searchResult = Arrays.binarySearch(items, searchedNumber);
 
         int arrayLength = items.length;
         int indexOfNumber = 0;
